@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/fakestorereact/static/css/main.073c9b0a.css",
+    "main.js": "/fakestorereact/static/js/main.b888bf03.js",
+    "static/js/787.855d4501.chunk.js": "/fakestorereact/static/js/787.855d4501.chunk.js",
+    "static/media/logo.svg": "/fakestorereact/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/fakestorereact/index.html",
+    "main.073c9b0a.css.map": "/fakestorereact/static/css/main.073c9b0a.css.map",
+    "main.b888bf03.js.map": "/fakestorereact/static/js/main.b888bf03.js.map",
+    "787.855d4501.chunk.js.map": "/fakestorereact/static/js/787.855d4501.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.b888bf03.js"
+  ]
+}
