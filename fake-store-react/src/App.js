@@ -1,17 +1,16 @@
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useReducer } from 'react';
 import Cart from './Cart'
 import Products from './Products'
 import ProductDetails from './ProductDetails'
 import Checkout from './Checkout'
-import applicationContext from './utils/applicationContext'
+import CartContext, {CartReducer, GetInitialCart} from './utils/CartContext'
 
 function App() {
-  // Some generic appdata, may switch to reducer, persistent, etc. as needed.
-  const [appdata, setAppdata] = useState({});
+  const [cart, dispatch] = useReducer(CartReducer, GetInitialCart());
   return (
     <div className="App">
-      <applicationContext.Provider value={appdata}>
+      <CartContext.Provider value={cart}>
       <HashRouter>
         <Routes>
           <Route exact path="/" element={<Navigate to="/products" replace={true}/>}/>
@@ -21,7 +20,7 @@ function App() {
           <Route exact path="/checkout" element={<Checkout/>}/>
         </Routes>
       </HashRouter>
-      </applicationContext.Provider>
+      </CartContext.Provider>
     </div>
   );
 }
