@@ -19,10 +19,10 @@ export function CartReducer(state, action) {
     const foundItem = () => state.items.find(idMatch);
 
     const incItem = () => state.items
-                                .map(el => idMatch(el) ? {...el, quantity: el.quantity + 1} : el);
+                                .map(el => idMatch(el) ? {...el, quantity: el.quantity + action.payload.quantity} : el);
     
     // Also sorts by price. This is the only place where the isSorted invariant may be invalidated so it's only needed here.
-    const appendItem = () => [...state.items, {...action.payload, quantity: 1}].sort((a,b) => b.price - a.price);
+    const appendItem = () => [...state.items, {...action.payload}].sort((a,b) => b.price - a.price);
 
     const removeItem = () => state.items
                                 .filter(el => !idMatch(el) || el.quantity > 1)
@@ -30,10 +30,13 @@ export function CartReducer(state, action) {
 
     const AddAction = () => foundItem() ? incItem() : appendItem();
     const RemoveAction = () => foundItem() ? removeItem() : {...state.items}
+    const ClearItem = () => state.items.filter((el) => !idMatch(el));
 
     switch (action.type) {
         case 'add': return {...state, items: AddAction().sort()};
         case 'remove': return {...state, items: RemoveAction()};
+        case 'clear': return {...state, items: ClearItem()};
+        case 'empty': return {...state, items: []};
         default:
             // log error silently
             console.log("Reducer Action Invalid");
