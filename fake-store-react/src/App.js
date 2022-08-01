@@ -1,3 +1,9 @@
+/* 
+  Debriefing
+    Now that I've made a somewhat complex app I have a better idea on how to design one / implement one.
+    I would absolutely do a better job if I re-did this. Maybe for the future.
+*/
+
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useReducer, useEffect, useState, useCallback } from 'react';
 import Cart from './Cart'
