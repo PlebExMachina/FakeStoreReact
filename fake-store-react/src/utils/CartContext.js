@@ -2,13 +2,17 @@ import { createContext } from 'react'
 import { hasItem, modItem, appendItem, removeItem, noChange } from './ReducerHelpers'
 
 export const GetInitialCart = () => {
-    return {
+    const TryItem = localStorage.getItem("Cart");
+    return TryItem ? JSON.parse(TryItem) : {
         items: [],
     }
 }
 
-const CartContext = createContext(GetInitialCart())
+export const SaveCart = (cart) => {
+    localStorage.setItem("Cart", JSON.stringify(cart));
+}
 
+const CartContext = createContext(GetInitialCart())
 
 export function CartReducer(state, action) {
     const idMatch = (el) => el.id === action.payload.id;
@@ -18,7 +22,7 @@ export function CartReducer(state, action) {
                                 .map(el => idMatch(el) ? {...el, quantity: el.quantity + 1} : el);
     
     // Also sorts by price. This is the only place where the isSorted invariant may be invalidated so it's only needed here.
-    const appendItem = () => [...state.items, action.payload].sort((a,b) => b.price - a.price);
+    const appendItem = () => [...state.items, {...action.payload, quantity: 1}].sort((a,b) => b.price - a.price);
 
     const removeItem = () => state.items
                                 .filter(el => !idMatch(el) || el.quantity > 1)

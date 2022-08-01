@@ -8,7 +8,6 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 function Products() {
-    console.log(styles);
     const [term, setTerm] = useState("");           // Term must be included in either title or description.
     const [category, setCategory] = useState("");   // Category to filter the query by. Changing this will trigger a re-fetch.
     const [sortBy, setSortBy] = useState("");       // "" -> None, LT -> Lowest to Highest, GT -> Highest to Lowest. Changing this will change results without fetching.
@@ -19,7 +18,6 @@ function Products() {
     const formSearch = useRef(null);
 
     const UpdateProductsView = useCallback (() => {
-    console.log(results);
     const Temp = results.filter(el => el.title.toLowerCase().includes(term.toLowerCase()) || el.description.toLowerCase().includes(term.toLowerCase()));
     switch(sortBy){
         case "": 
