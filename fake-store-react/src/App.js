@@ -4,7 +4,7 @@
     I would absolutely do a better job if I re-did this. Maybe for the future.
 */
 
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate, Link } from 'react-router-dom';
 import { useReducer, useEffect, useState, useCallback } from 'react';
 import Cart from './Cart'
 import Products from './Products'
@@ -17,10 +17,10 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Button from 'react-bootstrap/Button';
 
 function App() {
   const [cart, dispatch] = useReducer(CartReducer, GetInitialCart());
-
   // Save any changes to cart.
   useEffect(() => {
     SaveCart(cart);
@@ -29,20 +29,20 @@ function App() {
   return (
     <div className="App">
       <CartContext.Provider value={{cart, dispatch}}>
-        <Navbar bg="light" expand="lg">
-        <Container>
-          <Navbar.Brand href="/#/">FakeStore</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="/#/products">Products</Nav.Link>
-              <Nav.Link href="/#/cart">Cart</Nav.Link>
-              <Nav.Link href="/#/checkout">Checkout</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
       <HashRouter>
+        <Navbar bg="light" expand="lg">
+          <Container >
+          <Link to="/"><Button variant="success">FakeStore</Button></Link>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="me-auto">
+              <Link to="/products"><Button className="m-3">Products</Button></Link>
+              <Link to="/cart"><Button className="m-3">Cart</Button></Link>
+              <Link to="/checkout"><Button className="m-3">Checkout</Button></Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
         <Routes>
           <Route exact path="/" element={<Navigate to="/products" replace={true}/>}/>
           <Route exact path="/products" element={<Products/>}/>
