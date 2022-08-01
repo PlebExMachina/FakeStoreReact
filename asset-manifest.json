@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/FakeStoreReact/static/css/main.e6c13ad2.css",
-    "main.js": "/FakeStoreReact/static/js/main.94cd92fe.js",
+    "main.css": "/FakeStoreReact/static/css/main.5c0b353e.css",
+    "main.js": "/FakeStoreReact/static/js/main.bdd39518.js",
     "static/js/787.855d4501.chunk.js": "/FakeStoreReact/static/js/787.855d4501.chunk.js",
     "index.html": "/FakeStoreReact/index.html",
-    "main.e6c13ad2.css.map": "/FakeStoreReact/static/css/main.e6c13ad2.css.map",
-    "main.94cd92fe.js.map": "/FakeStoreReact/static/js/main.94cd92fe.js.map",
+    "main.5c0b353e.css.map": "/FakeStoreReact/static/css/main.5c0b353e.css.map",
+    "main.bdd39518.js.map": "/FakeStoreReact/static/js/main.bdd39518.js.map",
     "787.855d4501.chunk.js.map": "/FakeStoreReact/static/js/787.855d4501.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.94cd92fe.js"
+    "static/css/main.5c0b353e.css",
+    "static/js/main.bdd39518.js"
   ]
 }
