@@ -19,8 +19,6 @@ function App() {
   useEffect(() => {
     SaveCart(cart);
   }, [cart])
-
-  console.log(cart);
   
   return (
     <div className="App">
