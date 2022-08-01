@@ -1,13 +1,16 @@
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { useReducer } from 'react';
+import { useReducer, useEffect, useState, useCallback } from 'react';
 import Cart from './Cart'
 import Products from './Products'
 import ProductDetails from './ProductDetails'
 import Checkout from './Checkout'
 import CartContext, {CartReducer, GetInitialCart} from './utils/CartContext'
+import {getProducts, getProductsByCategory} from './utils/FakeStoreAPI'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [cart, dispatch] = useReducer(CartReducer, GetInitialCart());
+
   return (
     <div className="App">
       <CartContext.Provider value={cart}>
