@@ -5,6 +5,6 @@
     overflow: hidden;
 }
   
-.testimonial-group > :global(.row) > :global(.col-xs-) {
+.testimonial-group > :global(.row) > :global(.col-xs-4) {
     flex: 0 0 auto;
 }
