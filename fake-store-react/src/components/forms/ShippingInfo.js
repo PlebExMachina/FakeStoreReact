@@ -10,7 +10,7 @@ import styles from './ShippingInfo.module.css';
 
 function ShippingInfo() {
     return (
-    <div className={`${styles.module} ${styles.body} mb-3`}>
+    <div className={`${styles.module} ${styles.body} mb-3 text-light`}>
         <Form.Group className="mb-3">
             <Form.Label>Name</Form.Label>
             <Form.Control type="text" placeholder="Enter your name..." />

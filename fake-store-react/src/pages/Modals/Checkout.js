@@ -37,7 +37,7 @@ function Checkout() {
     return (
         <div className={`${styles.module} ${styles.body}`}>
             <Cart/>
-            <h1 className="text-center">Total Cost : ${totalCost.toFixed(2)}</h1>
+            <h1 className="text-center text-light">Total Cost : ${totalCost.toFixed(2)}</h1>
             <Form onSubmit={handleSubmit}>
                 <ShippingInfo/>
                 <CreditCardInfo/>
