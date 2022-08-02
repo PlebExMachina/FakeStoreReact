@@ -38,7 +38,6 @@ function ProductDetailsInterface(props) {
                 <p className="m-3">Quantity: {quantity}</p>
                 <Button variant="warning" className={`${styles.module} ${styles.button}`} onClick={()=>{setQuantity(quantity+1)}}>+</Button>
             </div>
-            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
         </div>
     );
 }

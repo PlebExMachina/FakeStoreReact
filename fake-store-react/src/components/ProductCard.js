@@ -21,7 +21,7 @@ function ProductCard(props) {
     const localDoubleClick = props.onDoubleClick || toDetails;
 
     return (
-        <CardWrapper image={props.image} onDoubleClick={localDoubleClick} className={`${styles.module} ${styles.body}`}>
+        <CardWrapper image={props.image} onDoubleClick={localDoubleClick} config={props.config} className={`${styles.module} ${styles.body}`}>
             <ProductBody {...props}/>
             {props.children}
         </CardWrapper>

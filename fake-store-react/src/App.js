@@ -6,13 +6,8 @@
 // Utils
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useReducer, useEffect } from 'react';
-
-// Pages
-import Cart from './pages/Cart'
-import Products from './pages/Products'
-import ProductDetails from './pages/ProductDetails'
-import Checkout from './pages/Checkout'
-import CartContextAPI from './utils/CartContext'
+import loadable from '@loadable/component'
+import CartContextAPI  from './utils/CartContext';
 
 // Model
 import Button from 'react-bootstrap/Button';
@@ -21,6 +16,12 @@ import NavbarWrapper from './components/wrappers/NavbarWrapper';
 // CSS
 import styles from './App.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+// Pages (Lazy Loading)
+const Cart = loadable(() => import('./pages/Cart'));
+const Products = loadable(() => import('./pages/Products'));
+const ProductDetails = loadable(() => import('./pages/ProductDetails'));
+const Checkout = loadable(() => import('./pages/Checkout'));
 
 function App() {
   // Initialize cart context.

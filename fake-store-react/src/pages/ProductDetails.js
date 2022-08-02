@@ -32,7 +32,7 @@ function ProductDetails() {
 
     return (
         <div className={`${styles.module} ${styles.body}`}>
-           { details && <ProductCard {...details} image={details.image} onDoubleClick={()=>{}}>
+           { details && <ProductCard {...details} config={true} image={details.image} onDoubleClick={()=>{}}>
                 <ProductDetailsInterface {...details}/>
             </ProductCard> }
         </div>        
