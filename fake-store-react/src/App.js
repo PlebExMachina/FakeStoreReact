@@ -1,48 +1,40 @@
-/* 
-  Debriefing
-    Now that I've made a somewhat complex app I have a better idea on how to design one / implement one.
-    I would absolutely do a better job if I re-did this. Maybe for the future.
-*/
+// Utils
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { useReducer, useEffect } from 'react';
 
-import { HashRouter, Routes, Route, Navigate, Link } from 'react-router-dom';
-import { useReducer, useEffect, useState, useCallback } from 'react';
-import Cart from './Cart'
-import Products from './Products'
-import ProductDetails from './ProductDetails'
-import Checkout from './Checkout'
-import CartContext, {CartReducer, GetInitialCart, SaveCart} from './utils/CartContext'
-import {getProducts, getProductsByCategory} from './utils/FakeStoreAPI'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+// Pages
+import Cart from './pages/Cart'
+import Products from './pages/Products'
+import ProductDetails from './pages/ProductDetails'
+import Checkout from './pages/Checkout'
+import CartContextAPI from './utils/CartContext'
+
+// Model
 import Button from 'react-bootstrap/Button';
+import NavbarWrapper from './components/wrappers/NavbarWrapper';
+
+// CSS
+import styles from './App.module.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const [cart, dispatch] = useReducer(CartReducer, GetInitialCart());
+  // Initialize cart context.
+  const [cart, dispatch] = useReducer(CartContextAPI.reducer, CartContextAPI.load());
+
   // Save any changes to cart.
   useEffect(() => {
-    SaveCart(cart);
+    CartContextAPI.save(cart);
   }, [cart])
   
   return (
-    <div className="App">
-      <CartContext.Provider value={{cart, dispatch}}>
+    <div className={`App ${styles.module} ${styles.body}`}>
+      <CartContextAPI.CTX.Provider value={{cart, dispatch}}>
       <HashRouter>
-        <Navbar bg="light" expand="lg">
-          <Container >
-          <Link to="/"><Button variant="success">FakeStore</Button></Link>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="me-auto">
-              <Link to="/products"><Button className="m-3">Products</Button></Link>
-              <Link to="/cart"><Button className="m-3">Cart</Button></Link>
-              <Link to="/checkout"><Button className="m-3">Checkout</Button></Link>
-              </Nav>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
+        <NavbarWrapper logo={<Button variant="success">FakeStore</Button>}>
+            <Button className="m-3" to="/products">Products</Button>
+            <Button className="m-3" to="/cart">Cart</Button>
+            <Button className="m-3" to="/checkout">Checkout</Button>
+        </NavbarWrapper>
         <Routes>
           <Route exact path="/" element={<Navigate to="/products" replace={true}/>}/>
           <Route exact path="/products" element={<Products/>}/>
@@ -51,7 +43,7 @@ function App() {
           <Route exact path="/checkout" element={<Checkout/>}/>
         </Routes>
       </HashRouter>
-      </CartContext.Provider>
+      </CartContextAPI.CTX.Provider>
     </div>
   );
 }

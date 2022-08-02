@@ -1,23 +1,26 @@
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import styles from './ProductCard.module.css';
+// React
 import { useNavigate } from 'react-router-dom';
 
-function ProductCard({id, title, price, description, category, image, rating}) {
+// Sub Components
+import CardWrapper from './wrappers/CardWrapper';
+import ProductBody from './ProductBody';
+
+// CSS
+import styles from './ProductCard.module.css';
+
+function ProductCard(props) {
     const navigate = useNavigate();
     const toDetails = () => {
-        navigate(`./${id}`);
+        navigate(`./${props.id}`);
     };
 
+    const localDoubleClick = props.onDoubleClick || toDetails;
+
     return (
-            <Card className={`${styles.card} ${styles.product} col-xs-4`}>
-                <Card.Img variant="top" src={image} />
-                <Card.Body className="d-flex flex-column justify-content-between">
-                    <Card.Title>{title}</Card.Title>
-                    <Card.Text>{price}</Card.Text>
-                    <Button variant="primary" onClick={toDetails}>Details</Button>
-                </Card.Body>
-            </Card>
+        <CardWrapper image={props.image} onDoubleClick={localDoubleClick} className={`${styles.module} ${styles.body}`}>
+            <ProductBody {...props}/>
+            {props.children}
+        </CardWrapper>
     );
 }
 export default ProductCard;

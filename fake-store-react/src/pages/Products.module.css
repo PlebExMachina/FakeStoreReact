@@ -1,3 +1,5 @@
+.module.body {}
+
 .products.horizontalScrollable > :global(.row) {
     display: flex;
     flex-wrap: nowrap;

@@ -1,35 +1,35 @@
 import { createContext } from 'react'
-import { hasItem, modItem, appendItem, removeItem, noChange } from './ReducerHelpers'
 
-export const GetInitialCart = () => {
+// Retrieve persistent copy, failing that initialize the default.
+const GetInitialCart = () => {
     const TryItem = localStorage.getItem("Cart");
     return TryItem ? JSON.parse(TryItem) : {
         items: [],
     }
 }
 
-export const SaveCart = (cart) => {
+// Use with useEffect hook to keep cart changes persistent.
+const SaveCart = (cart) => {
     localStorage.setItem("Cart", JSON.stringify(cart));
 }
 
 const CartContext = createContext(GetInitialCart())
 
-export function CartReducer(state, action) {
+function CartReducer(state, action) {
     const idMatch = (el) => el.id === action.payload.id;
     const foundItem = () => state.items.find(idMatch);
 
-    const incItem = () => state.items
+    const addItem = () => state.items
                                 .map(el => idMatch(el) ? {...el, quantity: el.quantity + action.payload.quantity} : el);
     
-    // Also sorts by price. This is the only place where the isSorted invariant may be invalidated so it's only needed here.
-    const appendItem = () => [...state.items, {...action.payload}].sort((a,b) => b.price - a.price);
+    const appendItem = () => [...state.items, {...action.payload}];
 
-    const removeItem = () => state.items
+    const subItem = () => state.items
                                 .filter(el => !idMatch(el) || el.quantity > 1)
                                 .map(el => idMatch(el) ? {...el, quantity: el.quantity - 1} : el);
 
-    const AddAction = () => foundItem() ? incItem() : appendItem();
-    const RemoveAction = () => foundItem() ? removeItem() : {...state.items}
+    const AddAction = () => foundItem() ? addItem() : appendItem();
+    const RemoveAction = () => foundItem() ? subItem() : {...state.items}
     const ClearItem = () => state.items.filter((el) => !idMatch(el));
 
     switch (action.type) {
@@ -44,4 +44,22 @@ export function CartReducer(state, action) {
     }
 }
 
-export default CartContext;
+const CartContextAPI = {
+    // Use with useEffect hook to keep cart changes persistent.
+    save: SaveCart,
+
+    // React Reducer, supports the following actions...
+    // "add" {...item, item.quanitity}      -- tracks that quantity adding to existing quantities.
+    // "remove" {...item, item.quanitity}   -- tracks that much less quantity deleting it if it drops below 1.
+    // "clear" {...item}                    -- removes item entirely regardless of quantity
+    // "empty"                              -- removes all cart entries 
+    reducer: CartReducer,
+
+    // Retrieve persistent copy, failing that initialize the default.
+    load: GetInitialCart,
+
+    // React Context for cart
+    CTX: CartContext
+};
+
+export default CartContextAPI;
