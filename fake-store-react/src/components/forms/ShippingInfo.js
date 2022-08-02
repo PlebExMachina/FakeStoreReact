@@ -1,3 +1,7 @@
+/*
+  Faux Form for Shipping Info
+*/
+
 // Bootstrap
 import Form from 'react-bootstrap/Form';
 

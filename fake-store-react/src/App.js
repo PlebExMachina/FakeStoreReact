@@ -1,3 +1,8 @@
+/*
+  Entry point for the App
+  Contains routing logic and any global components.
+  Routes to appropriate pages.
+*/
 // Utils
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useReducer, useEffect } from 'react';

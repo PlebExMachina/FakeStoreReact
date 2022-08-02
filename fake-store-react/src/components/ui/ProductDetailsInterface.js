@@ -1,3 +1,10 @@
+/*
+    UI for interfacing with Product Details
+        -- Increment
+        -- Decrement
+        -- Add to Cart
+*/
+
 import { useNavigate } from 'react-router-dom'
 import { useState, useContext} from 'react'
 import CartContextAPI from '../../utils/CartContext';

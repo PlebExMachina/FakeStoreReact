@@ -1,3 +1,6 @@
+/*
+    Contains global cart information for the app as well as provides an API for modifying it.
+*/
 import { createContext } from 'react'
 
 // Retrieve persistent copy, failing that initialize the default.

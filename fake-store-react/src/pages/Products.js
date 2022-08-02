@@ -1,3 +1,7 @@
+/*
+    The products page contains a list of fetched products which can be filtered / sorted in several ways.
+*/
+
 // React
 import { useState, useEffect, useCallback, useRef } from 'react'
 

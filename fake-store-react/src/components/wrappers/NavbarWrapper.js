@@ -1,3 +1,8 @@
+/*
+    Utilizes Logo element and children to build up a Bootstrap Navbar.
+    Link elements are injected into the children with provided 'to' properties.
+*/
+
 // Utils
 import RandomKey from '../../utils/RandomKey';
 
@@ -22,8 +27,8 @@ function NavbarWrapper({logo, keyFunction, children}) {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                {children.map((el, index) => <Link key={keyFunction(el, index)} to={el.props.to}>{el}</Link>)}
-        </Nav>
+                  {children.map((el, index) => <Link key={keyFunction(el, index)} to={el.props.to}>{el}</Link>)}
+                </Nav>
       </Navbar.Collapse>
     </Container>
   </Navbar>

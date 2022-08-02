@@ -1,3 +1,7 @@
+/*
+    Specialization of the card that contains product information.
+*/
+
 // React
 import { useNavigate } from 'react-router-dom';
 

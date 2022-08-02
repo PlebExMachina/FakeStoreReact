@@ -1,3 +1,7 @@
+/*
+  Wrapper for a Bootstrap Card with provided image properties and children elements for the body.
+*/
+
 // Bootstrap
 import Card from 'react-bootstrap/Card';
 

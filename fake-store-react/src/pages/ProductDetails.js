@@ -1,3 +1,7 @@
+/*
+    The product details page contains more detailed information about a product and provides a way of adding items to the cart.
+*/
+
 // React
 import { useParams } from 'react-router-dom'
 import {useEffect, useState} from 'react'

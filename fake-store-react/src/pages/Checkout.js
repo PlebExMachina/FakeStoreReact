@@ -1,3 +1,8 @@
+/*
+    The checkout page has a faux form and displays items in the cart, exposes the cart UI, and provides an "exit point" for a transaction.
+    Completing the transaction clears the cart.
+*/
+
 // Utils
 import CartContextAPI from '../utils/CartContext';
 

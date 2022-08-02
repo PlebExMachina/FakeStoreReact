@@ -1,3 +1,10 @@
+/*
+    UI for interfacing with CartItems
+    -- Increment Item
+    -- Decrement Item (Removes at 0)
+    -- Remove Item From Cart
+*/
+
 // Utils
 import CartContextAPI from '../../utils/CartContext';
 

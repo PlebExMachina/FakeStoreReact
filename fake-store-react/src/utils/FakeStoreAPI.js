@@ -1,4 +1,10 @@
-/* https://fakestoreapi.com/ */
+/* 
+    Implements the FakeStoreAPI
+
+    This is naive and assumes that nothing will go wrong with the fetch. 
+
+    https://fakestoreapi.com/ 
+*/
 
 // Get all products
 /*
