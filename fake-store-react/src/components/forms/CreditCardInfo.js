@@ -1,3 +1,7 @@
+/*
+  Faux Form for Credit Card
+*/
+
 // Bootstrap
 import Form from 'react-bootstrap/Form';
 

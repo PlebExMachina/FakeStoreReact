@@ -15,7 +15,7 @@ import styles from './ProductCard.module.css';
 function ProductCard(props) {
     const navigate = useNavigate();
     const toDetails = () => {
-        navigate(`./${props.id}`);
+        navigate(`./products/${props.id}`);
     };
 
     const localDoubleClick = props.onDoubleClick || toDetails;

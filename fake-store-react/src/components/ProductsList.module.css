@@ -1,0 +1,12 @@
+.module.body {}
+
+.products.horizontalScrollable > :global(.row) {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow: hidden;
+}
+  
+.testimonial-group > :global(.row) > :global(.col-xs-) {
+    flex: 0 0 auto;
+}

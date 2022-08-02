@@ -4,7 +4,7 @@
 */
 
 // Utils
-import CartContextAPI from '../utils/CartContext';
+import CartContextAPI from '../../utils/CartContext';
 
 // React
 import { useContext } from "react";
@@ -18,8 +18,8 @@ import Form from 'react-bootstrap/Form';
 import Cart from "./Cart";
 
 // Sub Components
-import CreditCardInfo from "../components/forms/CreditCardInfo";
-import ShippingInfo from "../components/forms/ShippingInfo";
+import CreditCardInfo from "../../components/forms/CreditCardInfo";
+import ShippingInfo from "../../components/forms/ShippingInfo";
 
 // CSS
 import styles from './Checkout.module.css';

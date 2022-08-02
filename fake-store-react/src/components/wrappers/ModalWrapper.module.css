@@ -1,0 +1,8 @@
+.modal.header {
+    background-color: rgb(33, 37, 41);
+    border-bottom-color: black;
+    color: white;
+}
+.modal.body {
+    background-color: black;
+}

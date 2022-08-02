@@ -14,9 +14,9 @@ function CardWrapper({children, image, onDoubleClick, config}) {
   onDoubleClick = onDoubleClick || (() => {});
 
     return (
-            <Card className={`${styles.module} ${styles.body} text-center col-xs-4 d-flex justify-content-between ${useConfig ? styles.alt : ''}`} onDoubleClick={onDoubleClick}>
-                <Card.Img variant="top" src={image} />
-                <Card.Body className="d-flex flex-column justify-content-end">
+            <Card className={`${styles.module} ${styles.body} text-center col-xs-4 d-flex justify-content-between m-1 p-1 bg-dark p-5 ${useConfig ? styles.alt : ''}`} onDoubleClick={onDoubleClick}>
+                <Card.Img variant="top" src={image} className="border" />
+                <Card.Body className="d-flex flex-column justify-content-end text-light">
                   {children}
                 </Card.Body>
             </Card>

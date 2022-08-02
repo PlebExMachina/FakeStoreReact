@@ -21,16 +21,15 @@ function NavbarWrapper({logo, keyFunction, children}) {
     // Use specified Key function if children are dynamic.
     keyFunction = keyFunction || RandomKey
     return (
-    <Navbar bg="light" expand="lg" className={`${styles.module} ${styles.body}`}>
-        <Container >
-            <Link to="/">{logo}</Link>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="me-auto">
-                  {children.map((el, index) => <Link key={keyFunction(el, index)} to={el.props.to}>{el}</Link>)}
-                </Nav>
-      </Navbar.Collapse>
-    </Container>
+    <Navbar bg="dark" expand="lg" variant="dark" className={`${styles.module} ${styles.body}`}>
+      <Container>
+        <Nav className="ml-auto">
+          {logo}
+        </Nav>
+        <Nav className="mr-auto">
+          {children.length ? (children.map((el, index) => <Link key={keyFunction(el, index)} to={el.props.to}>{el}</Link>)) : <Link to={children.props.to}>{children}</Link> }
+        </Nav>
+        </Container>
   </Navbar>
   );
 }

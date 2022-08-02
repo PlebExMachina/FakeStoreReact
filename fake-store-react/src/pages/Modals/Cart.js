@@ -3,7 +3,7 @@
 */
 
 // Utils
-import CartContextAPI from '../utils/CartContext';
+import CartContextAPI from '../../utils/CartContext';
 import { useDraggable } from "react-use-draggable-scroll";
 
 
@@ -11,8 +11,8 @@ import { useDraggable } from "react-use-draggable-scroll";
 import {useContext, useRef} from 'react'
 
 // Sub Components
-import ProductCard from '../components/ProductCard';
-import CartItemInterface from '../components/ui/CartItemInterface';
+import ProductCard from '../../components/ProductCard';
+import CartItemInterface from '../../components/ui/CartItemInterface';
 
 // CSS
 import styles from './Cart.module.css'

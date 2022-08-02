@@ -4,7 +4,7 @@
   Routes to appropriate pages.
 */
 // Utils
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { useReducer, useEffect } from 'react';
 import loadable from '@loadable/component'
 import CartContextAPI  from './utils/CartContext';
@@ -12,16 +12,22 @@ import CartContextAPI  from './utils/CartContext';
 // Model
 import Button from 'react-bootstrap/Button';
 import NavbarWrapper from './components/wrappers/NavbarWrapper';
+import { CartFill } from 'react-bootstrap-icons';
+
+// Sub Components
+import ModalWrapper from './components/wrappers/ModalWrapper';
+import ToCheckout from './components/ToCheckout';
 
 // CSS
 import styles from './App.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './bootstrapOverride.css';
 
 // Pages (Lazy Loading)
-const Cart = loadable(() => import('./pages/Cart'));
+const Cart = loadable(() => import('./pages/Modals/Cart'));
 const Products = loadable(() => import('./pages/Products'));
-const ProductDetails = loadable(() => import('./pages/ProductDetails'));
-const Checkout = loadable(() => import('./pages/Checkout'));
+const ProductDetails = loadable(() => import('./pages/Modals/ProductDetails'));
+const Checkout = loadable(() => import('./pages/Modals/Checkout'));
 
 function App() {
   // Initialize cart context.
@@ -37,16 +43,14 @@ function App() {
       <CartContextAPI.CTX.Provider value={{cart, dispatch}}>
       <HashRouter>
         <NavbarWrapper logo={<Button variant="success">FakeStore</Button>}>
-            <Button className="m-3" to="/products">Products</Button>
-            <Button className="m-3" to="/cart">Cart</Button>
-            <Button className="m-3" to="/checkout">Checkout</Button>
+            <Button className="m-3" to="/cart"><CartFill/></Button>
         </NavbarWrapper>
         <Routes>
-          <Route exact path="/" element={<Navigate to="/products" replace={true}/>}/>
-          <Route exact path="/products" element={<Products/>}/>
-          <Route exact path="/products/:id" element={<ProductDetails/>}/>
-          <Route exact path="/cart" element={<Cart/>}/>
-          <Route exact path="/checkout" element={<Checkout/>}/>
+          <Route path="/" element={<Products/>}>
+            <Route exact path="/products/:id" element={<ModalWrapper to="/" title="Product Details"><ProductDetails/></ModalWrapper>}/>
+            <Route exact path="/cart" element={<ModalWrapper to="/" title={<ToCheckout/>}><Cart/></ModalWrapper>}/>
+            <Route exact path="/checkout" element={<ModalWrapper to="/" title="Checkout"><Checkout/></ModalWrapper>}/>
+          </Route>
         </Routes>
       </HashRouter>
       </CartContextAPI.CTX.Provider>
