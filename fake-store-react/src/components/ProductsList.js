@@ -18,7 +18,7 @@ function ProductsList({view}){
     return (
         <div className={`container ${styles.horizontalScrollable} ${styles.products}`}>
             <div className={`row text-center ${styles.force} ${styles.scrolling}`} {...events} ref={dragPoint}>
-                {view && view.map(el => <ProductCard key={el.id} {...el} description={null}/>)}
+                {view && view.map(el => <ProductCard key={el.id} {...el} description={null} clickButton={true} />)}
             </div>
         </div>  
     );

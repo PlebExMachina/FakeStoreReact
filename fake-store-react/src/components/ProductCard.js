@@ -5,6 +5,9 @@
 // React
 import { useNavigate } from 'react-router-dom';
 
+// Bootstrap
+import Button from 'react-bootstrap/Button';
+
 // Sub Components
 import CardWrapper from './wrappers/CardWrapper';
 import ProductBody from './ProductBody';
@@ -24,6 +27,7 @@ function ProductCard(props) {
         <CardWrapper image={props.image} onDoubleClick={localDoubleClick} config={props.config} className={`${styles.module} ${styles.body}`}>
             <ProductBody {...props}/>
             {props.children}
+            {props.clickButton && <Button onClick={toDetails}>Details</Button>}
         </CardWrapper>
     );
 }
