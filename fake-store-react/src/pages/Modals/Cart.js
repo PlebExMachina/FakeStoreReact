@@ -27,7 +27,7 @@ function Cart() {
 
     return (
         <div className={`container ${styles.horizontalScrollable} ${styles.products}`}>
-           <div className={`row text-center`} {...events} ref={dragPoint}>
+           <div className={`row text-center ${styles.force} ${styles.scroll}`} {...events} ref={dragPoint}>
              {cart.items.length ? (cart.items && cart.items.map(el => 
                 <ProductCard key={el.id} {...el} description={null} onDoubleClick={()=>{}}>
                   <CartItemInterface {...el}/>

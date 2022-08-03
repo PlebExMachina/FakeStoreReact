@@ -8,3 +8,10 @@
 .testimonial-group > :global(.row) > :global(.col-xs-4) {
     flex: 0 0 auto;
 }
+
+.force.scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow: hidden;
+}
