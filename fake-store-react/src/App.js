@@ -23,11 +23,17 @@ import styles from './App.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './bootstrapOverride.css';
 
+// Pages (Eager Loading)
+import Cart from './pages/Modals/Cart';
+import Products from './pages/Products';
+import ProductDetails from './pages/Modals/ProductDetails';
+import Checkout from './pages/Modals/Checkout';
+
 // Pages (Lazy Loading)
-const Cart = loadable(() => import('./pages/Modals/Cart'));
+/*const Cart = loadable(() => import('./pages/Modals/Cart'));
 const Products = loadable(() => import('./pages/Products'));
 const ProductDetails = loadable(() => import('./pages/Modals/ProductDetails'));
-const Checkout = loadable(() => import('./pages/Modals/Checkout'));
+const Checkout = loadable(() => import('./pages/Modals/Checkout'));*/
 
 function App() {
   // Initialize cart context.
