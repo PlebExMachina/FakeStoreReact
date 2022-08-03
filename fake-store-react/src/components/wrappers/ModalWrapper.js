@@ -21,11 +21,11 @@ function ModalWrapper({children, title, to}) {
     return (
         <div>
         <Modal show={true} onHide={handleClose}>
-            <Modal.Header closeButton className={`${styles.modal} ${styles.header}`}>
+            <Modal.Header closeButton>
                <Modal.Title>{title}</Modal.Title>
             </Modal.Header>
 
-            <Modal.Body className={`${styles.modal} ${styles.body}`}>
+            <Modal.Body>
                     {children}
             </Modal.Body>
         </Modal>
