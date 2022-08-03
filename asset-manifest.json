@@ -1,35 +1,15 @@
 {
   "files": {
-    "main.css": "/FakeStoreReact/static/css/main.a97df302.css",
-    "main.js": "/FakeStoreReact/static/js/main.492b1695.js",
-    "static/css/501.c5070b98.chunk.css": "/FakeStoreReact/static/css/501.c5070b98.chunk.css",
-    "static/js/501.bc22088a.chunk.js": "/FakeStoreReact/static/js/501.bc22088a.chunk.js",
-    "static/css/859.b619c53f.chunk.css": "/FakeStoreReact/static/css/859.b619c53f.chunk.css",
-    "static/js/859.01a2f031.chunk.js": "/FakeStoreReact/static/js/859.01a2f031.chunk.js",
-    "static/css/436.e7aedeea.chunk.css": "/FakeStoreReact/static/css/436.e7aedeea.chunk.css",
-    "static/js/436.d9fe543f.chunk.js": "/FakeStoreReact/static/js/436.d9fe543f.chunk.js",
-    "static/css/921.143a0f31.chunk.css": "/FakeStoreReact/static/css/921.143a0f31.chunk.css",
-    "static/js/921.64e29f7c.chunk.js": "/FakeStoreReact/static/js/921.64e29f7c.chunk.js",
+    "main.css": "/FakeStoreReact/static/css/main.d0a67375.css",
+    "main.js": "/FakeStoreReact/static/js/main.ee043e2d.js",
     "static/js/787.855d4501.chunk.js": "/FakeStoreReact/static/js/787.855d4501.chunk.js",
-    "static/js/199.8b60e55d.chunk.js": "/FakeStoreReact/static/js/199.8b60e55d.chunk.js",
-    "static/js/293.906012e1.chunk.js": "/FakeStoreReact/static/js/293.906012e1.chunk.js",
     "index.html": "/FakeStoreReact/index.html",
-    "main.a97df302.css.map": "/FakeStoreReact/static/css/main.a97df302.css.map",
-    "main.492b1695.js.map": "/FakeStoreReact/static/js/main.492b1695.js.map",
-    "501.c5070b98.chunk.css.map": "/FakeStoreReact/static/css/501.c5070b98.chunk.css.map",
-    "501.bc22088a.chunk.js.map": "/FakeStoreReact/static/js/501.bc22088a.chunk.js.map",
-    "859.b619c53f.chunk.css.map": "/FakeStoreReact/static/css/859.b619c53f.chunk.css.map",
-    "859.01a2f031.chunk.js.map": "/FakeStoreReact/static/js/859.01a2f031.chunk.js.map",
-    "436.e7aedeea.chunk.css.map": "/FakeStoreReact/static/css/436.e7aedeea.chunk.css.map",
-    "436.d9fe543f.chunk.js.map": "/FakeStoreReact/static/js/436.d9fe543f.chunk.js.map",
-    "921.143a0f31.chunk.css.map": "/FakeStoreReact/static/css/921.143a0f31.chunk.css.map",
-    "921.64e29f7c.chunk.js.map": "/FakeStoreReact/static/js/921.64e29f7c.chunk.js.map",
-    "787.855d4501.chunk.js.map": "/FakeStoreReact/static/js/787.855d4501.chunk.js.map",
-    "199.8b60e55d.chunk.js.map": "/FakeStoreReact/static/js/199.8b60e55d.chunk.js.map",
-    "293.906012e1.chunk.js.map": "/FakeStoreReact/static/js/293.906012e1.chunk.js.map"
+    "main.d0a67375.css.map": "/FakeStoreReact/static/css/main.d0a67375.css.map",
+    "main.ee043e2d.js.map": "/FakeStoreReact/static/js/main.ee043e2d.js.map",
+    "787.855d4501.chunk.js.map": "/FakeStoreReact/static/js/787.855d4501.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a97df302.css",
-    "static/js/main.492b1695.js"
+    "static/css/main.d0a67375.css",
+    "static/js/main.ee043e2d.js"
   ]
 }
